@@ -24,11 +24,11 @@ Portfolio Highlight:
 ├── docker-compose.yml
 ├── requirements.txt
 ├── README.md
-├── .env                   # you create this with secrets/config
+├── .env                   
 ├── dags/
 │   └── taxi_weather_dag.py
 ├── data/
-│   └── nyc-taxi-trip-duration.csv  # sample file (see notes on daily filenames)
+│   └── nyc-taxi-trip-duration.csv  
 └── scripts/
     ├── __init__.py
     ├── extract_taxi_data.py
