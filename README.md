@@ -1,6 +1,6 @@
-# 🚖 Weather Impact on Taxi Demand – Airflow Data Pipeline  
+#  Weather Impact on Taxi Demand – Airflow Data Pipeline  
 
-## 📌 Project Overview  
+## Project Overview  
 This project demonstrates how to build an **automated, production-style data pipeline** using **Apache Airflow**.  
 The pipeline ingests **NYC Taxi trip data (CSV)** and **daily weather data (OpenWeather API)**, joins them, and stores the results in **PostgreSQL** for downstream analysis.  
 
@@ -9,7 +9,7 @@ Portfolio Highlight:
 
 ---
 
-## ⚙️ Tech Stack  
+## Tech Stack  
 - **Python** 🐍 – data processing & API calls  
 - **Apache Airflow** – DAG scheduling & orchestration  
 - **PostgreSQL** – data warehouse / storage  
@@ -18,7 +18,7 @@ Portfolio Highlight:
 
 ---
 
-## 📂 Project Structure  
+## Project Structure  
 ```
 .
 ├── docker-compose.yml
@@ -101,11 +101,3 @@ Notes
   - cp data/nyc-taxi-trip-duration.csv data/nyc-taxi-trip-duration$(date -v-1d +%Y-%m-%d).csv  # macOS
 
 Ensure the data directory is mounted into the containers at /data as noted above.
-
----
-
-## Troubleshooting
-- WEATHER_API_KEY is not set → fetch_weather_data will raise a RuntimeError. Ensure .env is created and env vars are passed into containers via docker-compose.yml.
-- File not found: /data/nyc-taxi-trip-durationYYYY-MM-DD.csv → verify the dated file exists and that ./data is mounted to /data in both webserver and scheduler.
-- Can’t access UI on :8080 → ensure the container is healthy and the port isn’t in use.
-- Postgres table not appearing → confirm task_load_to_postgres ran and that the connection string is reachable from within containers.
